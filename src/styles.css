@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+	background-color: #e2e2e2;
+}
+.program-outer {
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 10px;
+}
+.programimg {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    background: #ccc;
+}
+.programimg img {
+	padding: 10px;
+	height: 100%;
+}
+.programdetials {
+    background: #fff;
+    padding: 10px;
+}
+.program-content {
+	min-height: 650px;
+}
+.padding30 {
+	padding:30px;
+}
+.margin30 {
+	margin: 30px 0;
+}
+.margin30top {
+	margin-top: 30px;
+}
+.margin30bottom {
+	margin-bottom: 30px;
+}
+.webpageTitle {
+	padding: 0 30px;
+}
+header {
+	border-bottom: 1px solid #ccc;
+	padding: 15px 0;
+}
+footer {
+	border-top: 1px solid #ccc;
+	padding: 15px 0;
+}
+.filter {
+    background: #fff;
+}
+.filtersection {
+	margin-bottom: 15px;
+}
+.filtertitle {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.filtervalue {
+	display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.filterbtn {
+    background-color: #c7f988;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 10px 10px;
+    cursor: pointer;
+}
+.selectedyear, .selectedlaunch, .selectedland {
+	background-color: #87d02b;
+}
+.filtersheader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.resetfilter {
+    cursor: pointer;
+    color: blue;
+}

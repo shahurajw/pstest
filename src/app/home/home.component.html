@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div class="container-fluid program-content padding30">
+	<div class="row">
+		<div class="col-12 col-md-3 filter">
+			<p class="filtersheader"><b>Filters</b><span class="resetfilter" (click)="resetFilters()">(Reset all)</span></p>
+			<div class="filtersection">
+				<div class="filtertitle">launch Year</div>
+				<div class="filtervalue">
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2006'}" (click)="launchYear('2006')">2006</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2007'}" (click)="launchYear('2007')">2007</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2008'}" (click)="launchYear('2008')">2008</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2009'}" (click)="launchYear('2009')">2009</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2010'}" (click)="launchYear('2010')">2010</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2011'}" (click)="launchYear('2011')">2011</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2012'}" (click)="launchYear('2012')">2012</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2013'}" (click)="launchYear('2013')">2013</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2014'}" (click)="launchYear('2014')">2014</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2015'}" (click)="launchYear('2015')">2015</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2016'}" (click)="launchYear('2016')">2016</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2017'}" (click)="launchYear('2017')">2017</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2018'}" (click)="launchYear('2018')">2018</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2019'}" (click)="launchYear('2019')">2019</div>
+					<div class="yearbtn filterbtn" [ngClass]="{'selectedyear': launch_year === '2020'}" (click)="launchYear('2020')">2020</div>
+				</div>
+			</div>
+			<div class="filtersection">
+				<div class="filtertitle">Successful launch</div>
+				<div class="filtervalue">
+					<div class="launchbtn filterbtn" [ngClass]="{'selectedlaunch': launch_success == 'true'}" (click)="launchsuccess('true')">True</div>
+					<div class="launchbtn filterbtn" [ngClass]="{'selectedlaunch': launch_success == 'false'}" (click)="launchsuccess('false')">False</div>
+				</div>
+			</div>
+			<div class="filtersection">
+				<div class="filtertitle">Successful landing</div>
+				<div class="filtervalue">
+					<div class="landbtn filterbtn" [ngClass]="{'selectedland': land_success == 'true'}" (click)="landsuccess('true')">True</div>
+					<div class="landbtn filterbtn" [ngClass]="{'selectedland': land_success == 'false'}" (click)="landsuccess('false')">False</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-9 programinfo">
+			<div class="row">
+				<div class="col-12 col-md-3 programinfo" *ngFor="let prog of programs">
+					<div class="program-outer" *ngIf="loading == false">
+						<div class="programimg">
+							<img src="{{prog['links']['mission_patch_small']}}" width="100%">
+						</div>
+						<div class="programdetials">
+							<p>{{prog['mission_name']}} #{{prog['flight_number']}}</p>
+							<p>Mission Ids: {{prog['mission_id']}}</p>
+							<p>Launch Year: {{prog['launch_year']}}</p>
+							<p>Successful Launch: {{prog['launch_success']}}</p>
+							<p>Successful 
+							Landing: {{prog['rocket']['first_stage']['cores'][0]['land_success']}} </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-12" *ngIf="loading == true">Loading...</div>
+				<div class="col-12 col-md-12" *ngIf="programs.length == 0 && loading == false">No data available</div>	
+			</div>			
+		</div>
+	</div>
+</div>
+<app-footer></app-footer>
